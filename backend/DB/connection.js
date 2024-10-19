@@ -1,5 +1,8 @@
 const mongoose=require('mongoose');
-mongoose.connect("mongodb+srv://ashikvincent:ashik@cluster0.4fl0hs4.mongodb.net/NirmalaSync?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
 
 .then(()=>{
     console.log("DB Connected")
